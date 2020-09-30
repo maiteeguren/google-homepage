@@ -9,24 +9,73 @@
 		<nav>
 			<ul>
 				<li><a href="#">Gmail</a></li>
-				<li><a href="#" id="images">Imagenes</a></li>
-				<li><a href="#"><img id="menu" src="menu_icon.png" alt="Google menu."></a></li>
-				<li><a href="#"><img id="avatar" src="avatar.png" alt="User image."></a></li>
+				<li><a href="#" id="images">Imágenes</a></li>
+					<li><a href="#"><img id="menu" src="./images/menu_icon.png" alt="Google menu."></a></li>
+						<div id="dropdown" class="hide">
+							<div id="group">
+								<div href="#"><img src="./images/avatar.png" id="dropdownAvatar" alt="User image.">Cuenta</div>
+							    <div href="#"><img src="./images/glogo.png" alt="">Búsqueda</div>
+							    <div href="#"><img src="./images/maps.png" alt="">Maps</div>
+							    <div href="#"><img src="./images/youtube.png" alt="">Youtube</div>
+							    <div href="#"><img src="./images/play.png" alt="">Play</div>
+							    <div href="#"><img src="./images/gmail.png" alt="">Gmail</div>
+							    <div href="#"><img src="./images/drive.png" alt="">Drive</div>
+							    <div href="#"><img src="./images/calendar.png" alt="">Calendario</div>
+							    <div href="#"><img src="./images/translate.png" alt="">Traductor</div>
+							    <div href="#"><img src="./images/photos.png" alt="">Fotos</div>
+							    <div href="#"><img src="./images/meet.png" alt="">Meet</div>
+							    <div href="#"><img src="./images/duo.png" alt="">Dúo</div>
+							    <div href="#"><img src="./images/shopping.png" alt="">Shopping</div>
+							</div><br>
+							<div>
+							    <div href="#"><img src="./images/docs.png" alt="">Document...</div>
+							    <div href="#"><img src="./images/books.png" alt="">Libros</div>
+							    <div href="#"><img src="./images/blogger.png" alt="">Blogger</div>
+							    <div href="#"><img src="./images/contacts.png" alt="">Contactos</div>
+							    <div href="#"><img src="./images/hangouts.png" alt="">Hangouts</div>
+							    <div href="#"><img src="./images/keep.png" alt="">Google Ke...</div>
+							    <div href="#"><img src="./images/classroom.png" alt="">Classroom</div>
+							    <div href="#"><img src="./images/sheets.png" alt="">Hojas de c...</div>
+							    <div href="#"><img src="./images/present.png" alt="">Presentac...</div>
+							    <div href="#"><img src="./images/jamboard.png" alt="">Jamboard</div>
+							    <div href="#"><img src="./images/earth.png" alt="">Earth</div>
+							    <div href="#"><img src="./images/present.png" alt="">Coleccion...</div>
+							    <div href="#"><img src="./images/arts.png" alt="">Arte y cult...</div>
+							</div>
+							<button class="mas">Más productos de Google</button>
+						</div>
+						
+					</div>
+				<li><a href="#"><img id="avatar" src="./images/avatar.png" alt="User image."></a></li>
+					<div id="accountdropdown" class="hide">
+						<img src="./images/avatar.png" id="accountAvatar" alt="User image.">
+						<img src="./images/cameraicon.png" id="cameraicon"></img>
+						<h3>Maite Eguren Brown</h3>
+						<p id="email">maite@gmail.com</p>
+						<button id="admin">Administra tu Cuenta de Google</button>
+						<div id="cuenta"><img src="./images/add.png">Agrega otra cuenta</div>
+						<button id="salir">Salir</button>
+						<p class="footer">
+							<a href="#">Politica de Privacidad</a> •
+							<a href="#">Condiciones del Servicio</a>
+						</p>
+					</div>
 			</ul>
 		</nav>
 	</header>
 	<main>
 		
-		<img id="logo" src="./google_logo.png" alt="Google Logo">
+		<img id="logo" src="./images/google_logo.png" alt="Google Logo">
 		<div id="searchbar">
-			<img id="search" src="search_icon.png" alt="Search icon">
-			<img id="voice" src="voice_icon.png" alt="Voice search">
+			<img id="search" src="./images/search_icon.png" alt="Search icon">
+			<input type="text" tabindex="1">
+			<a href="#"><img id="voice" src="./images/voice_icon.png" alt="Voice search"></a>
 		</div>
-		<input type="text" tabindex="1">
 		<button>Buscar con Google</button>
 		<button>Me siento con suerte</button>
 
 		<p>Ofrecido por Google en: <a href="#">English</a></p>
+	</main>
 	<footer>
 		<div id="country">
 			<p>Australia</p>
@@ -37,7 +86,7 @@
 				<li><a href="#">Publicidad</a></li>
 				<li><a href="#">Negocios</a></li>
 				<li><a href="#">Sobre Google</a></li>
-				<li><a href="#">Como funciona la Busqueda</a></li>
+				<li><a href="#">Cómo funciona la Búsqueda</a></li>
 			</ul>
 			<ul id="right">
 				<li><a href="#">Privacidad</a></li>
@@ -46,7 +95,28 @@
 			</ul>
 		</div>
 	</footer>
-	</main>
+	<script type="text/javascript">
+		/* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+		const gridDropdown = document.getElementById("dropdown");
+		const accountDropdown = document.getElementById("accountdropdown");
+		const gridMenu = document.getElementById("menu");
+		const accountMenu = document.getElementById("avatar");
+		const main = document.querySelector("main")
 
+		gridMenu.addEventListener('click', (event) => {
+		gridDropdown.classList.toggle("show");
+		accountDropdown.classList.remove("show");
+		});
+
+		accountMenu.addEventListener('click', (event) => {
+			accountDropdown.classList.toggle("show");
+			gridDropdown.classList.remove("show");
+		});
+
+		main.addEventListener('click', (event) => {
+			gridDropdown.classList.remove("show");
+			accountDropdown.classList.remove("show");
+		});
+	</script>
 </body>
 </html>
